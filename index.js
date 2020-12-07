@@ -16,5 +16,3 @@ app.listen(port, () => {
 app.get('/', (req, res) => {
     res.send("Главная страница сайта!")
 });
-
-ss
