@@ -1,14 +1,16 @@
 const express = require('express');
 const router  = express.Router();
 
-app.get('/reg', (req, res) => {
+router.get('/reg', (req, res) => {
     res.send("Registration page!")
 });
 
-app.get('/auth', (req, res) => {
+router.get('/auth', (req, res) => {
     res.send("Login page!")
 });
 
-app.get('/dashboard', (req, res) => {
+router.get('/dashboard', (req, res) => {
     res.send("Dashboard")
 });
+
+module.exports = router;
