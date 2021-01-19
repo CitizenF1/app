@@ -5,11 +5,18 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const path = require('path');
 const config = require('./config/db');
+const account = require('./routes/account'); 
 
 const app = express();
 
 const port = 3000;
 
+app.use(cors());
+
+app.use(bodyParser.json());
+
+mongoose.connect(config.db, { userNewUrlParser: true, userUnifiedTopology: true });
+ 
 mongoose.connect(config.db);
 
 mongoose.connection.on('connected', () => {
@@ -27,3 +34,5 @@ app.listen(port, () => {
 app.get('/', (req, res) => {
     res.send("Home page!")
 });
+
+app.use('/account', account);
