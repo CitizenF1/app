@@ -11,8 +11,8 @@ const app = express();
 
 const port = 3000;
 
-app.use = (passport.initialize());
-app.use = (passport.session); 
+app.use(passport.initialize());
+app.use(passport.session()); 
 
 require('./config/passport')(passport);
 
