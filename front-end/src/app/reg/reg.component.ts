@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegComponent implements OnInit {
 
+  name: string | undefined
+  login: string | undefined
+  email: string | undefined
+  password: string | undefined
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  signUp(){
+    console.log("work")
+    return false
   }
 
 }
