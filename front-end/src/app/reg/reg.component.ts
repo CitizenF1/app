@@ -50,4 +50,6 @@ export class RegComponent implements OnInit {
     return false
   }
 
+  
+
 }
