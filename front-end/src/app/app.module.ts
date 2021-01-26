@@ -11,6 +11,7 @@ import { RegComponent } from './reg/reg.component';
 import { AuthComponent } from './auth/auth.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthService } from './auth.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { AuthService } from './auth.service';
     AppRoutingModule,
     FormsModule,
     FlashMessagesModule.forRoot(),
+    HttpClientModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
