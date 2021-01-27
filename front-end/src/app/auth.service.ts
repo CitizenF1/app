@@ -16,6 +16,6 @@ export class AuthService {
     let headers = new Headers()
     headers.append('Content-Type', 'application/json')
     return this.htpp.post('http://localhost:3000/account/reg', user,
-    { headers: headers }).pipe(map(res => res.json()))
+    { headers: headers }).pipe(map((res: any) => res.json()))
   }
 }
