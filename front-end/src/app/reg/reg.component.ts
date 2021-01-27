@@ -16,7 +16,7 @@ export class RegComponent implements OnInit {
   password!: String; 
 
   constructor(
-    private flashMessagesService: FlashMessagesService,
+    private _flashMessagesService: FlashMessagesService,
     private authServise: AuthService,
     private router: Router
     ) 
@@ -34,33 +34,33 @@ export class RegComponent implements OnInit {
       password: this.password,
     }
     if(!user.name){
-      this.flashMessagesService.show('Enter your name!', 
+      this._flashMessagesService.show('Enter your name!', 
       { cssClass: 'alert-danger', timeout: 3000 });
       return false
     }
     else if(!user.login){
-      this.flashMessagesService.show('Enter your login!', 
+      this._flashMessagesService.show('Enter your login!', 
       { cssClass: 'alert-danger', timeout: 3000 });
       return false
     }
     else if(!user.email){
-      this.flashMessagesService.show('Enter your email!', 
+      this._flashMessagesService.show('Enter your email!', 
       { cssClass: 'alert-danger', timeout: 3000 });
       return false
     }
     else if(!user.password){
-      this.flashMessagesService.show('Enter your password!', 
+      this._flashMessagesService.show('Enter your password!', 
       { cssClass: 'alert-danger', timeout: 3000 });
       return false
     }
 
     this.authServise.registerUser(user).subscribe( (data: any) => {
       if (!data.success) {
-        this.flashMessagesService.show(data.msg,
+        this._flashMessagesService.show(data.msg,
           {cssClass: 'alert-danger', timeout: 3000});
           this.router.navigate(['/reg'])
       } else {
-        this.flashMessagesService.show(data.msg,
+        this._flashMessagesService.show(data.msg,
           { cssClass: 'alert-success', timeout: 3000 });
           this.router.navigate(['/auth'])
       }
@@ -71,3 +71,4 @@ export class RegComponent implements OnInit {
 
   
 }
+
