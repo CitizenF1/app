@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-  htpp: any;
+  http: any;
 
   constructor(
     httpClient: HttpClient
@@ -15,7 +15,7 @@ export class AuthService {
   registerUser(user: any) {
     let headers = new Headers()
     headers.append('Content-Type', 'application/json')
-    return this.htpp.post('http://localhost:3000/account/reg', user,
+    return this.http.post('http://localhost:3000/account/reg', user,
     { headers: headers }).pipe(map((res: any) => res.json()))
   }
 }
