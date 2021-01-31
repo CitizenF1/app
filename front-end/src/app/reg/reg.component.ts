@@ -13,7 +13,7 @@ export class RegComponent implements OnInit {
   name!: String;
   login!: String; 
   email!: String;
-  password!: String; 
+  password!: String;
 
   constructor(
     private _flashMessagesService: FlashMessagesService,
