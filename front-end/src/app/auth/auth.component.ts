@@ -49,6 +49,7 @@ export class AuthComponent implements OnInit {
           this._flashMessagesService.show("You have successfully logged in!",
             { cssClass: 'alert-success', timeout: 3000 });
             this.router.navigate(['/dashboard'])
+            this.authServise.storeUser(data.token, data.user)
         }
       })
       return false

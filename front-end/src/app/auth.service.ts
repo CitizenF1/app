@@ -6,6 +6,10 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
+
+  token: any
+  user: any
+  
   http: any;
 
   constructor(
@@ -24,6 +28,15 @@ export class AuthService {
     headers.append('Content-Type', 'application/json')
     return this.http.post('http://localhost:3000/account/auth', user,
     { headers: headers }).pipe(map((res: any) => res.json()))
+
+  }
+
+  storeUser(token, user){
+    localStorage.setItem('token', token)
+    localStorage.setItem('user', JSON.stringify(user))
+
+    this.token = token
+    this.user = user
 
   }
 }
