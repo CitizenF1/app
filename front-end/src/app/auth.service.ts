@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
 
@@ -7,8 +7,8 @@ import { map } from 'rxjs/operators';
 })
 export class AuthService {
 
-  token: any
-  user: any
+  token: any;
+  user: any;
   
   http: any;
 
@@ -31,7 +31,7 @@ export class AuthService {
 
   }
 
-  storeUser(token, user){
+  storeUser(token: string, user: any){
     localStorage.setItem('token', token)
     localStorage.setItem('user', JSON.stringify(user))
 
