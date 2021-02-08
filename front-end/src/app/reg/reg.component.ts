@@ -10,10 +10,10 @@ import { AuthService } from '../auth.service';
 })
 export class RegComponent implements OnInit {
 
-  name!: String;
-  login!: String; 
-  email!: String;
-  password!: String;
+  name: any;
+  login: any; 
+  email: any;
+  password: any;
 
   constructor(
     private _flashMessagesService: FlashMessagesService,

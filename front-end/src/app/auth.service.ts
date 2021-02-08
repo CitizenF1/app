@@ -13,7 +13,7 @@ export class AuthService {
   http: any;
 
   constructor(
-    httpClient: HttpClient
+   private httpClient: HttpClient
   ) { }
 
   registerUser(user: any) {

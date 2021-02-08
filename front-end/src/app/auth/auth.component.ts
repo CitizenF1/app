@@ -10,8 +10,8 @@ import { AuthService } from '../auth.service';
 })
 export class AuthComponent implements OnInit {
 
-    login!: String; 
-    password!: String;
+    login: any; 
+    password: any;
   
     constructor(
       private _flashMessagesService: FlashMessagesService,
