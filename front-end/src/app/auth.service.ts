@@ -39,4 +39,10 @@ export class AuthService {
     this.user = user
 
   }
+
+  logout(){
+    this.token = null
+    this.user = null
+    localStorage.clear()
+  }
 }
