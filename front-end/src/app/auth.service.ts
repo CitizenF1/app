@@ -31,7 +31,7 @@ export class AuthService {
 
   }
 
-  storeUser(token: string, user: any){
+  storeUser(token: string, user: any) {
     localStorage.setItem('token', token)
     localStorage.setItem('user', JSON.stringify(user))
 
@@ -40,7 +40,7 @@ export class AuthService {
 
   }
 
-  logout(){
+  logout() {
     this.token = null
     this.user = null
     localStorage.clear()
