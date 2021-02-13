@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private _flashMessagesService: FlashMessagesService,
-    private authServise: AuthService,
+    public authServise: AuthService,
     private router: Router
   ) { }
 
