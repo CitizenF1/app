@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -12,16 +12,16 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private _flashMessagesService: FlashMessagesService,
-    public authServise: AuthService,
+    public authService: AuthService,
     private router: Router
   ) { }
 
   ngOnInit(): void {
   }
 
-  logooutUser(){
-    this.authServise.logout()
-    this._flashMessagesService.show("You are logget out",
+  logoutUser() {
+    this.authService.logout()
+    this._flashMessagesService.show("You are logged out", 
       { cssClass: 'alert-success', timeout: 3000 });
       this.router.navigate(['/auth'])
   }
